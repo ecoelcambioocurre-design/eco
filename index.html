@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Eco.ElCambioOcurre</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ECO — El Cambio Occure</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --sky: #7ab8d4;
+    --sky-light: #b8d9e8;
+    --sky-pale: #e8f4f9;
+    --sky-dark: #4a8fa8;
+    --cream: #f0ece0;
+    --cream-dark: #d9d3be;
+    --gray: #7a7a7a;
+    --gray-dark: #3d3d3d;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--gray-dark); background: var(--white); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(255,255,255,0.93);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(122,184,212,0.2);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--sky-dark); letter-spacing: 3px; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--sky-dark); }
+  .nav-cta { background: var(--sky); color: white; border: none; cursor: pointer; padding: 10px 24px; border-radius: 50px; font-size: 13px; font-weight: 500; font-family: 'DM Sans', sans-serif; text-decoration: none; transition: all .2s; }
+  .nav-cta:hover { background: var(--sky-dark); transform: translateY(-1px); }
+
+  .hero {
+    min-height: 100vh; background: var(--sky);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; padding: 120px 48px 80px; text-align: center;
+  }
+  .hero-bg { position: absolute; inset: 0; pointer-events: none; opacity: .1; }
+  .hero-content { position: relative; z-index: 2; animation: fadeUp .9s ease both; }
+  .hero-logo { margin-bottom: 28px; animation: fadeUp .9s .1s ease both; }
+  .hero-logo svg { width: 100px; height: 100px; filter: drop-shadow(0 6px 20px rgba(0,0,0,.15)); }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(72px,12vw,120px); color: var(--cream); letter-spacing: 6px; line-height: 1; animation: fadeUp .9s .2s ease both; }
+  .hero-tagline { font-size: 15px; font-weight: 300; letter-spacing: 4px; color: rgba(240,236,224,.8); text-transform: uppercase; margin: 10px 0 28px; animation: fadeUp .9s .3s ease both; }
+  .hero-desc { font-size: 18px; line-height: 1.75; color: rgba(255,255,255,.92); max-width: 560px; margin: 0 auto 40px; font-weight: 300; animation: fadeUp .9s .4s ease both; }
+  .hero-desc strong { font-weight: 500; color: var(--cream); }
+  .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeUp .9s .5s ease both; }
+  .btn-primary { background: var(--cream); color: var(--sky-dark); padding: 14px 36px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all .2s; }
+  .btn-primary:hover { background: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+  .btn-outline { background: transparent; color: var(--cream); border: 1.5px solid rgba(240,236,224,.55); padding: 14px 36px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all .2s; }
+  .btn-outline:hover { border-color: var(--cream); background: rgba(240,236,224,.1); transform: translateY(-2px); }
+  .hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: rgba(255,255,255,.55); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; animation: bounce 2s ease-in-out infinite; }
+
+  .section { padding: 96px 48px; }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--sky); margin-bottom: 14px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(30px,4.5vw,46px); color: var(--gray-dark); line-height: 1.2; margin-bottom: 20px; }
+  .section-body { font-size: 17px; line-height: 1.8; color: var(--gray); max-width: 580px; font-weight: 300; }
+
+  .mission-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .mission-cards { display: flex; flex-direction: column; gap: 14px; }
+  .mission-card { background: var(--sky-pale); border-left: 3px solid var(--sky); border-radius: 0 12px 12px 0; padding: 18px 22px; transition: transform .2s; }
+  .mission-card:hover { transform: translateX(6px); }
+  .mission-card-title { font-weight: 500; color: var(--sky-dark); font-size: 14px; margin-bottom: 4px; }
+  .mission-card-text { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+  .impact { background: var(--sky-pale); text-align: center; }
+  .impact-inner { max-width: 860px; margin: 0 auto; }
+  .impact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; margin-top: 52px; }
+  .impact-num { font-family: 'Playfair Display', serif; font-size: 58px; color: var(--sky-dark); line-height: 1; }
+  .impact-num span { font-size: 34px; }
+  .impact-label { font-size: 13px; color: var(--gray); margin-top: 8px; font-weight: 300; }
+
+  .volunteer-inner { max-width: 1100px; margin: 0 auto; }
+  .volunteer-header { margin-bottom: 52px; }
+  .volunteer-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .vol-card { border: 1px solid rgba(122,184,212,.28); border-radius: 16px; padding: 30px 26px; transition: all .25s; }
+  .vol-card:hover { border-color: var(--sky); box-shadow: 0 8px 32px rgba(122,184,212,.18); transform: translateY(-4px); }
+  .vol-icon { font-size: 24px; margin-bottom: 16px; }
+  .vol-title { font-weight: 500; font-size: 16px; color: var(--gray-dark); margin-bottom: 8px; }
+  .vol-text { font-size: 13px; color: var(--gray); line-height: 1.7; font-weight: 300; }
+
+  .events { background: var(--sky-pale); }
+  .events-inner { max-width: 1100px; margin: 0 auto; }
+  .events-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
+  .event-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,.06); transition: all .25s; }
+  .event-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.1); }
+  .event-header { background: var(--sky); padding: 22px 26px; display: flex; align-items: center; justify-content: space-between; }
+  .event-date { font-family: 'Playfair Display', serif; color: var(--cream); }
+  .event-date-day { font-size: 40px; line-height: 1; }
+  .event-date-month { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; opacity: .85; }
+  .event-tag { background: rgba(255,255,255,.2); color: white; padding: 5px 13px; border-radius: 50px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
+  .event-body { padding: 22px 26px; }
+  .event-title { font-weight: 500; font-size: 16px; color: var(--gray-dark); margin-bottom: 8px; }
+  .event-desc { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 300; }
+
+  .signup { background: var(--sky); }
+  .signup-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+  .signup .section-label { color: rgba(255,255,255,.7); }
+  .signup .section-title { color: var(--cream); }
+  .signup .section-body { color: rgba(255,255,255,.85); margin: 0 auto 36px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; text-align: left; margin-bottom: 14px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1/-1; }
+  label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.8); }
+  input, select, textarea { background: rgba(255,255,255,.15); border: 1.5px solid rgba(255,255,255,.3); border-radius: 10px; padding: 12px 16px; font-size: 14px; color: white; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s; }
+  input::placeholder, textarea::placeholder { color: rgba(255,255,255,.45); }
+  select option { color: var(--gray-dark); background: white; }
+  input:focus, select:focus, textarea:focus { border-color: var(--cream); }
+  .form-submit { background: var(--cream); color: var(--sky-dark); border: none; cursor: pointer; padding: 14px 48px; border-radius: 50px; font-size: 15px; font-weight: 500; font-family: 'DM Sans', sans-serif; margin-top: 8px; transition: all .2s; width: 100%; }
+  .form-submit:hover { background: white; transform: translateY(-2px); }
+  .form-success { display: none; background: rgba(255,255,255,.15); border-radius: 12px; padding: 24px; color: white; font-size: 16px; margin-top: 16px; line-height: 1.6; }
+
+  .donate { text-align: center; }
+  .donate-inner { max-width: 680px; margin: 0 auto; }
+  .donate-amounts { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 36px 0 28px; }
+  .donate-amt { border: 1.5px solid rgba(122,184,212,.4); border-radius: 50px; padding: 12px 28px; font-size: 18px; font-weight: 500; color: var(--sky-dark); cursor: pointer; transition: all .2s; font-family: 'Playfair Display', serif; background: none; }
+  .donate-amt:hover, .donate-amt.active { background: var(--sky); color: white; border-color: var(--sky); }
+  .donate-note { font-size: 13px; color: var(--gray); margin-bottom: 28px; font-weight: 300; line-height: 1.7; }
+  .donate-btn { background: var(--sky); color: white; padding: 15px 52px; border-radius: 50px; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-block; transition: all .2s; }
+  .donate-btn:hover { background: var(--sky-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(122,184,212,.4); }
+
+  footer { background: #2e2e2e; color: rgba(255,255,255,.55); padding: 56px 48px 28px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 44px; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--sky-light); letter-spacing: 3px; }
+  .footer-tagline { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+  .footer-manos { margin-top: 14px; font-size: 13px; line-height: 1.7; }
+  .footer-manos strong { color: rgba(255,255,255,.85); }
+  .footer-links h4 { color: white; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { color: rgba(255,255,255,.45); text-decoration: none; font-size: 14px; transition: color .2s; }
+  .footer-links a:hover { color: var(--sky-light); }
+  .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.08); padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; }
+  .ig-link { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,.45); text-decoration: none; font-size: 13px; transition: color .2s; }
+  .ig-link:hover { color: var(--sky-light); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .section { padding: 60px 20px; }
+    .mission-inner, .impact-grid, .volunteer-grid, .events-grid { grid-template-columns: 1fr; gap: 20px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .hero { padding: 100px 20px 60px; }
+    footer { padding: 44px 20px 24px; }
+    .footer-inner { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <svg width="36" height="36" viewBox="0 0 80 80" fill="none">
+      <path d="M28 38 L34 20 L40 38 L60 38 L44 50 L50 68 L34 56 L18 68 L24 50 L8 38Z" fill="#5a8ab0"/>
+      <path d="M44 32 L49 16 L54 32 L70 32 L58 42 L62 58 L49 49 L36 58 L40 42 L28 32Z" fill="none" stroke="#5a8ab0" stroke-width="1.8"/>
+      <path d="M34 56 Q32 64 31 72" stroke="#5a8ab0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M49 49 Q48 60 48 72" stroke="#5a8ab0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <rect x="29" y="62" width="4" height="6" rx="1.5" fill="#5a8ab0"/>
+      <rect x="46" y="62" width="4" height="6" rx="1.5" fill="#5a8ab0"/>
+    </svg>
+    <span class="nav-brand">ECO</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#mision">Misión</a></li>
+    <li><a href="#voluntariado">Voluntariado</a></li>
+    <li><a href="#eventos">Eventos</a></li>
+    <li><a href="#donar">Donar</a></li>
+  </ul>
+  <a href="#unete" class="nav-cta">Únete</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <svg width="100%" height="100%" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M100 150L108 128L116 150L140 150L122 164L130 186L108 172L86 186L94 164L76 150Z" fill="white"/>
+      <path d="M900 80L907 60L914 80L936 80L919 93L926 113L907 100L888 113L895 93L878 80Z" fill="white"/>
+      <path d="M1100 380L1106 362L1112 380L1132 380L1116 392L1122 410L1106 398L1090 410L1096 392L1080 380Z" fill="white"/>
+      <path d="M200 600L205 588L210 600L224 600L214 608L218 620L206 612L194 620L198 608L188 600Z" fill="white"/>
+      <path d="M60 300L64 290L68 300L80 300L72 306L75 317L64 310L53 317L56 306L48 300Z" fill="white"/>
+      <path d="M600 40L604 30L608 40L620 40L612 47L615 57L604 50L593 57L596 47L588 40Z" fill="white"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-logo">
+      <svg width="100" height="100" viewBox="0 0 120 120" fill="none">
+        <path d="M46 52 L56 24 L66 52 L96 52 L72 70 L82 98 L56 80 L30 98 L40 70 L16 52Z" fill="rgba(90,138,176,0.65)"/>
+        <path d="M68 44 L76 20 L84 44 L108 44 L88 58 L96 82 L76 68 L56 82 L64 58 L44 44Z" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2.2"/>
+        <path d="M56 80 Q54 92 52 108" stroke="rgba(255,255,255,0.65)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M76 68 Q75 84 75 108" stroke="rgba(255,255,255,0.65)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <rect x="49" y="100" width="6" height="9" rx="2" fill="rgba(255,255,255,0.65)"/>
+        <rect x="72" y="100" width="6" height="9" rx="2" fill="rgba(255,255,255,0.65)"/>
+      </svg>
+    </div>
+    <div class="hero-title">ECO</div>
+    <div class="hero-tagline">el cambio occure</div>
+    <p class="hero-desc">Apoyamos a <strong>Manos Que Sanan</strong> — llevando esperanza, recursos y comunidad a los niños que luchan contra el cáncer y a sus familias en Monterrey.</p>
+    <div class="hero-btns">
+      <a href="#donar" class="btn-primary">Hacer una donación</a>
+      <a href="#voluntariado" class="btn-outline">Ser voluntario</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    Conoce más
+  </div>
+</section>
+
+<section class="section mission" id="mision">
+  <div class="mission-inner">
+    <div>
+      <div class="section-label">Nuestra misión</div>
+      <h2 class="section-title">Cada niño merece luchar con apoyo a su lado</h2>
+      <p class="section-body">Somos un grupo de jóvenes comprometidos con hacer la diferencia. Desde hace dos años apoyamos a <strong>Manos Que Sanan</strong> — visitando a los niños, organizando eventos, y cubriendo necesidades reales: desde alimentos y medicamentos hasta material escolar y momentos de alegría.</p>
+    </div>
+    <div class="mission-cards">
+      <div class="mission-card">
+        <div class="mission-card-title">Apoyo material</div>
+        <div class="mission-card-text">Alimentos, medicamentos, suministros del hogar y todo lo que cada familia necesita durante el tratamiento.</div>
+      </div>
+      <div class="mission-card">
+        <div class="mission-card-title">Presencia constante</div>
+        <div class="mission-card-text">Visitamos a los niños regularmente en Manos Que Sanan, construyendo lazos genuinos y de largo plazo.</div>
+      </div>
+      <div class="mission-card">
+        <div class="mission-card-title">Eventos y recaudación</div>
+        <div class="mission-card-text">Rifas, eventos comunitarios y ventas que generan los recursos para sostener nuestra labor.</div>
+      </div>
+      <div class="mission-card">
+        <div class="mission-card-title">Comunidad activa</div>
+        <div class="mission-card-text">Conectamos a voluntarios, donantes y aliados alrededor de una causa que nos une a todos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section impact" id="impacto">
+  <div class="impact-inner">
+    <div class="section-label">Nuestro impacto</div>
+    <h2 class="section-title">Dos años de cambio real</h2>
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="impact-num">2<span>+</span></div>
+        <div class="impact-label">Años apoyando a Manos Que Sanan</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">100<span>+</span></div>
+        <div class="impact-label">Participantes en nuestros eventos</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">40,000<span>+</span></div>
+        <div class="impact-label">Pesos donados a Manos Que Sanan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section volunteer" id="voluntariado">
+  <div class="volunteer-inner">
+    <div class="volunteer-header">
+      <div class="section-label">Voluntariado</div>
+      <h2 class="section-title">Tu talento puede cambiar una vida</h2>
+      <p class="section-body">No solo necesitamos donaciones — necesitamos tus habilidades, tu tiempo y tu corazón. Hay un lugar para ti sin importar lo que puedas ofrecer.</p>
+    </div>
+    <div class="volunteer-grid">
+      </div>
+      <div class="vol-card">
+        <div class="vol-icon">🎨</div>
+        <div class="vol-title">Diseño y comunicación</div>
+        <div class="vol-text">Diseña materiales, crea contenido para redes sociales o ayúdanos a contar nuestra historia visualmente.</div>
+      </div>
+      <div class="vol-card">
+        <div class="vol-icon">✍️</div>
+        <div class="vol-title">Redacción y blog</div>
+        <div class="vol-text">Escribe artículos, testimonios o contenido que inspire a más personas a sumarse a la causa.</div>
+      </div>
+      <div class="vol-card">
+        <div class="vol-icon">📸</div>
+        <div class="vol-title">Fotografía y video</div>
+        <div class="vol-text">Captura los momentos de alegría en nuestros eventos y visitas para compartir el impacto real con la comunidad.</div>
+      </div>
+      <div class="vol-card">
+        <div class="vol-icon">🎉</div>
+        <div class="vol-title">Voluntari@ de eventos</div>
+        <div class="vol-text">Apoya en la logística, ambientación y experiencia de nuestros eventos de recaudación.</div>
+      </div>
+      <div class="vol-card">
+        <div class="vol-icon">🤝</div>
+        <div class="vol-title">Visitas y actividades</div>
+        <div class="vol-text">Acompáñanos en las visitas a Manos Que Sanan y lleva alegría directamente a los niños y sus familias.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section events" id="eventos">
+  <div class="events-inner">
+    <div class="section-label">Próximos eventos</div>
+    <h2 class="section-title">Únete a nuestra próxima actividad</h2>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-date"><div class="event-date-day">...</div><div class="event-date-month">Abril</div></div>
+          <div class="event-tag">evento</div>
+        </div>
+        <div class="event-body">
+          <div class="event-title">Clase de ceramica</div>
+          <div class="event-desc">Boletos disponibles en nuestro Instagram. Todos los fondos van directamente a Manos Que Sanan.</div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-date"><div class="event-date-day">...</div><div class="event-date-month">Mayo</div></div>
+          <div class="event-tag">Evento</div>
+        </div>
+        <div class="event-body">
+          <div class="event-title">Campito STEM by eco</div>
+          <div class="event-desc">Un campito para niños y niñas los sabados de mayo donde podran divertirse y aprender</div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-date"><div class="event-date-day">...</div><div class="event-date-month">Mayo</div></div>
+          <div class="event-tag">Evento</div>
+        </div>
+        <div class="event-body">
+          <div class="event-title">Mother Daugther taller de flores</div>
+          <div class="event-desc">Acompáñanos en nuestro evento y aprende a hacer un arreglo floral mientras convives con tu hija/mama. El regalo perfecto para el dia de las madres.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section signup" id="unete">
+  <div class="signup-inner">
+    <div class="section-label">Únete</div>
+    <h2 class="section-title">Quiero ser parte de ECO</h2>
+    <p class="section-body">Cuéntanos quién eres y cómo puedes contribuir. Nos pondremos en contacto contigo muy pronto.</p>
+    <form id="vol-form" onsubmit="handleSubmit(event)">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Nombre completo</label>
+          <input type="text" placeholder="Tu nombre" required/>
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <input type="email" placeholder="tu@correo.com" required/>
+        </div>
+        <div class="form-group">
+          <label>WhatsApp</label>
+          <input type="tel" placeholder="+52 81 0000 0000"/>
+        </div>
+        <div class="form-group">
+          <label>¿Cómo quieres contribuir?</label>
+          <select required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option>Tutoría académica</option>
+            <option>Diseño y comunicación</option>
+            <option>Redacción y blog</option>
+            <option>Fotografía y video</option>
+            <option>Organización de eventos</option>
+            <option>Visitas presenciales</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Cuéntanos sobre ti</label>
+          <textarea rows="3" placeholder="¿Qué habilidades tienes? ¿Por qué quieres unirte a ECO?"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="form-submit">Enviar solicitud</button>
+    </form>
+    <div class="form-success" id="success-msg">
+      ¡Gracias por querer ser parte del cambio! 🌟<br/>Revisamos tu solicitud y nos ponemos en contacto muy pronto.
+    </div>
+  </div>
+</section>
+
+<section class="section donate" id="donar">
+  <div class="donate-inner">
+    <div class="section-label">Donar</div>
+    <h2 class="section-title">Tu donación llega directo a los niños</h2>
+    <p class="section-body" style="margin:0 auto 8px;">Cada peso que donas se convierte en medicamentos, alimentos o un momento de alegría para un niño de <strong>Manos Que Sanan</strong>.</p>
+    <div class="donate-amounts">
+      <button class="donate-amt" onclick="selectAmt(this)">$100</button>
+      <button class="donate-amt active" onclick="selectAmt(this)">$250</button>
+      <button class="donate-amt" onclick="selectAmt(this)">$500</button>
+      <button class="donate-amt" onclick="selectAmt(this)">$1,000</button>
+    </div>
+    <p class="donate-note">Todo suma. </p>
+    <a href="https://w.app/ztbusv" class="donate-btn">Donar ahora</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">ECO</div>
+      <div class="footer-tagline">el cambio occure</div>
+      <div class="footer-manos">Apoyando a <strong>Manos Que Sanan</strong><br/>Monterrey, Nuevo León, México</div>
+    </div>
+    <div class="footer-links">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#mision">Misión</a></li>
+        <li><a href="#voluntariado">Voluntariado</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#unete">Únete</a></li>
+        <li><a href="#donar">Donar</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/eco.elcambioocurre/">@eco.elcambiooccure</a></li>
+        <li><a href="mailto:eco.elcambioocurre@gmail.com">eco.elcambioocurre@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 ECO — El Cambio Occure.</p>
+    <a href="https://instagram.com" class="ig-link">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </a>
+  </div>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('vol-form').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+  }
+  function selectAmt(btn) {
+    document.querySelectorAll('.donate-amt').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
