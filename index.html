@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Eco.ElCambioOcurre</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8"/>
@@ -31,7 +20,6 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; color: var(--gray-dark); background: var(--white); overflow-x: hidden; }
-
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -47,7 +35,6 @@
   .nav-links a:hover { color: var(--sky-dark); }
   .nav-cta { background: var(--sky); color: white; border: none; cursor: pointer; padding: 10px 24px; border-radius: 50px; font-size: 13px; font-weight: 500; font-family: 'DM Sans', sans-serif; text-decoration: none; transition: all .2s; }
   .nav-cta:hover { background: var(--sky-dark); transform: translateY(-1px); }
-
   .hero {
     min-height: 100vh; background: var(--sky);
     display: flex; align-items: center; justify-content: center;
@@ -67,26 +54,22 @@
   .btn-outline { background: transparent; color: var(--cream); border: 1.5px solid rgba(240,236,224,.55); padding: 14px 36px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all .2s; }
   .btn-outline:hover { border-color: var(--cream); background: rgba(240,236,224,.1); transform: translateY(-2px); }
   .hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: rgba(255,255,255,.55); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; animation: bounce 2s ease-in-out infinite; }
-
   .section { padding: 96px 48px; }
   .section-label { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--sky); margin-bottom: 14px; }
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(30px,4.5vw,46px); color: var(--gray-dark); line-height: 1.2; margin-bottom: 20px; }
   .section-body { font-size: 17px; line-height: 1.8; color: var(--gray); max-width: 580px; font-weight: 300; }
-
   .mission-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .mission-cards { display: flex; flex-direction: column; gap: 14px; }
   .mission-card { background: var(--sky-pale); border-left: 3px solid var(--sky); border-radius: 0 12px 12px 0; padding: 18px 22px; transition: transform .2s; }
   .mission-card:hover { transform: translateX(6px); }
   .mission-card-title { font-weight: 500; color: var(--sky-dark); font-size: 14px; margin-bottom: 4px; }
   .mission-card-text { font-size: 13px; color: var(--gray); line-height: 1.6; }
-
   .impact { background: var(--sky-pale); text-align: center; }
   .impact-inner { max-width: 860px; margin: 0 auto; }
   .impact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; margin-top: 52px; }
   .impact-num { font-family: 'Playfair Display', serif; font-size: 58px; color: var(--sky-dark); line-height: 1; }
   .impact-num span { font-size: 34px; }
   .impact-label { font-size: 13px; color: var(--gray); margin-top: 8px; font-weight: 300; }
-
   .volunteer-inner { max-width: 1100px; margin: 0 auto; }
   .volunteer-header { margin-bottom: 52px; }
   .volunteer-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
@@ -95,7 +78,6 @@
   .vol-icon { font-size: 24px; margin-bottom: 16px; }
   .vol-title { font-weight: 500; font-size: 16px; color: var(--gray-dark); margin-bottom: 8px; }
   .vol-text { font-size: 13px; color: var(--gray); line-height: 1.7; font-weight: 300; }
-
   .events { background: var(--sky-pale); }
   .events-inner { max-width: 1100px; margin: 0 auto; }
   .events-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
@@ -109,7 +91,6 @@
   .event-body { padding: 22px 26px; }
   .event-title { font-weight: 500; font-size: 16px; color: var(--gray-dark); margin-bottom: 8px; }
   .event-desc { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 300; }
-
   .signup { background: var(--sky); }
   .signup-inner { max-width: 680px; margin: 0 auto; text-align: center; }
   .signup .section-label { color: rgba(255,255,255,.7); }
@@ -125,8 +106,6 @@
   input:focus, select:focus, textarea:focus { border-color: var(--cream); }
   .form-submit { background: var(--cream); color: var(--sky-dark); border: none; cursor: pointer; padding: 14px 48px; border-radius: 50px; font-size: 15px; font-weight: 500; font-family: 'DM Sans', sans-serif; margin-top: 8px; transition: all .2s; width: 100%; }
   .form-submit:hover { background: white; transform: translateY(-2px); }
-  .form-success { display: none; background: rgba(255,255,255,.15); border-radius: 12px; padding: 24px; color: white; font-size: 16px; margin-top: 16px; line-height: 1.6; }
-
   .donate { text-align: center; }
   .donate-inner { max-width: 680px; margin: 0 auto; }
   .donate-amounts { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 36px 0 28px; }
@@ -135,7 +114,6 @@
   .donate-note { font-size: 13px; color: var(--gray); margin-bottom: 28px; font-weight: 300; line-height: 1.7; }
   .donate-btn { background: var(--sky); color: white; padding: 15px 52px; border-radius: 50px; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-block; transition: all .2s; }
   .donate-btn:hover { background: var(--sky-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(122,184,212,.4); }
-
   footer { background: #2e2e2e; color: rgba(255,255,255,.55); padding: 56px 48px 28px; }
   .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 44px; }
   .footer-brand { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--sky-light); letter-spacing: 3px; }
@@ -149,10 +127,8 @@
   .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.08); padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; }
   .ig-link { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,.45); text-decoration: none; font-size: 13px; transition: color .2s; }
   .ig-link:hover { color: var(--sky-light); }
-
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
-
   @media (max-width: 768px) {
     nav { padding: 14px 20px; }
     .nav-links { display: none; }
@@ -281,7 +257,6 @@
       <p class="section-body">No solo necesitamos donaciones — necesitamos tus habilidades, tu tiempo y tu corazón. Hay un lugar para ti sin importar lo que puedas ofrecer.</p>
     </div>
     <div class="volunteer-grid">
-      </div>
       <div class="vol-card">
         <div class="vol-icon">🎨</div>
         <div class="vol-title">Diseño y comunicación</div>
@@ -322,7 +297,7 @@
           <div class="event-tag">evento</div>
         </div>
         <div class="event-body">
-          <div class="event-title">Clase de ceramica</div>
+          <div class="event-title">Clase de cerámica</div>
           <div class="event-desc">Boletos disponibles en nuestro Instagram. Todos los fondos van directamente a Manos Que Sanan.</div>
         </div>
       </div>
@@ -332,8 +307,8 @@
           <div class="event-tag">Evento</div>
         </div>
         <div class="event-body">
-          <div class="event-title">Campito STEM by eco</div>
-          <div class="event-desc">Un campito para niños y niñas los sabados de mayo donde podran divertirse y aprender</div>
+          <div class="event-title">Campito STEM by ECO</div>
+          <div class="event-desc">Un campito para niños y niñas los sábados de mayo donde podrán divertirse y aprender.</div>
         </div>
       </div>
       <div class="event-card">
@@ -342,8 +317,8 @@
           <div class="event-tag">Evento</div>
         </div>
         <div class="event-body">
-          <div class="event-title">Mother Daugther taller de flores</div>
-          <div class="event-desc">Acompáñanos en nuestro evento y aprende a hacer un arreglo floral mientras convives con tu hija/mama. El regalo perfecto para el dia de las madres.</div>
+          <div class="event-title">Mother & Daughter taller de flores</div>
+          <div class="event-desc">Aprende a hacer un arreglo floral mientras convives con tu hija o mamá. El regalo perfecto para el Día de las Madres.</div>
         </div>
       </div>
     </div>
@@ -355,23 +330,23 @@
     <div class="section-label">Únete</div>
     <h2 class="section-title">Quiero ser parte de ECO</h2>
     <p class="section-body">Cuéntanos quién eres y cómo puedes contribuir. Nos pondremos en contacto contigo muy pronto.</p>
-<form id="vol-form" action="https://formspree.io/f/mnjozywe" method="POST">
+    <form action="https://formspree.io/f/mnjozywe" method="POST">
       <div class="form-grid">
         <div class="form-group">
           <label>Nombre completo</label>
-          <input type="text" placeholder="Tu nombre" required/>
+          <input type="text" name="nombre" placeholder="Tu nombre" required/>
         </div>
         <div class="form-group">
           <label>Correo electrónico</label>
-          <input type="email" placeholder="tu@correo.com" required/>
+          <input type="email" name="email" placeholder="tu@correo.com" required/>
         </div>
         <div class="form-group">
           <label>WhatsApp</label>
-          <input type="tel" placeholder="+52 81 0000 0000"/>
+          <input type="tel" name="whatsapp" placeholder="+52 81 0000 0000"/>
         </div>
         <div class="form-group">
           <label>¿Cómo quieres contribuir?</label>
-          <select required>
+          <select name="contribucion" required>
             <option value="" disabled selected>Selecciona una opción</option>
             <option>Diseño y comunicación</option>
             <option>Redacción y blog</option>
@@ -383,14 +358,11 @@
         </div>
         <div class="form-group full">
           <label>Cuéntanos sobre ti</label>
-          <textarea rows="3" placeholder="¿Qué habilidades tienes? ¿Por qué quieres unirte a ECO?"></textarea>
+          <textarea name="mensaje" rows="3" placeholder="¿Qué habilidades tienes? ¿Por qué quieres unirte a ECO?"></textarea>
         </div>
       </div>
       <button type="submit" class="form-submit">Enviar solicitud</button>
     </form>
-    <div class="form-success" id="success-msg">
-      ¡Gracias por querer ser parte del cambio! 🌟<br/>Revisamos tu solicitud y nos ponemos en contacto muy pronto.
-    </div>
   </div>
 </section>
 
@@ -405,7 +377,7 @@
       <button class="donate-amt" onclick="selectAmt(this)">$500</button>
       <button class="donate-amt" onclick="selectAmt(this)">$1,000</button>
     </div>
-    <p class="donate-note">Todo suma. </p>
+    <p class="donate-note">Todo suma.</p>
     <a href="https://w.app/ztbusv" class="donate-btn">Donar ahora</a>
   </div>
 </section>
@@ -430,14 +402,14 @@
     <div class="footer-links">
       <h4>Contacto</h4>
       <ul>
-        <li><a href="https://www.instagram.com/eco.elcambioocurre/">@eco.elcambiooccure</a></li>
+        <li><a href="https://www.instagram.com/eco.elcambioocurre/">@eco.elcambioocurre</a></li>
         <li><a href="mailto:eco.elcambioocurre@gmail.com">eco.elcambioocurre@gmail.com</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2025 ECO — El Cambio Occure.</p>
-    <a href="https://instagram.com" class="ig-link">
+    <a href="https://www.instagram.com/eco.elcambioocurre/" class="ig-link">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
       Instagram
     </a>
@@ -445,20 +417,10 @@
 </footer>
 
 <script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    document.getElementById('vol-form').style.display = 'none';
-    document.getElementById('success-msg').style.display = 'block';
-  }
   function selectAmt(btn) {
     document.querySelectorAll('.donate-amt').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
 </script>
 </body>
-</html>
-    <script  src="./script.js"></script>
-
-  </body>
-  
 </html>
