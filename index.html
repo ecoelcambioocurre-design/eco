@@ -12,7 +12,6 @@
     --sky-pale: #e8f4f9;
     --sky-dark: #4a8fa8;
     --cream: #f0ece0;
-    --cream-dark: #d9d3be;
     --gray: #7a7a7a;
     --gray-dark: #3d3d3d;
     --white: #ffffff;
@@ -20,38 +19,27 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; color: var(--gray-dark); background: var(--white); overflow-x: hidden; }
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 48px;
-    background: rgba(255,255,255,0.93);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(122,184,212,0.2);
-  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(255,255,255,0.93); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(122,184,212,0.2); }
   .nav-logo { display: flex; align-items: center; gap: 10px; }
   .nav-brand { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--sky-dark); letter-spacing: 3px; }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray); text-decoration: none; transition: color .2s; }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray); text-decoration: none; transition: color .2s; }
   .nav-links a:hover { color: var(--sky-dark); }
   .nav-cta { background: var(--sky); color: white; border: none; cursor: pointer; padding: 10px 24px; border-radius: 50px; font-size: 13px; font-weight: 500; font-family: 'DM Sans', sans-serif; text-decoration: none; transition: all .2s; }
   .nav-cta:hover { background: var(--sky-dark); transform: translateY(-1px); }
-  .hero {
-    min-height: 100vh; background: var(--sky);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden; padding: 120px 48px 80px; text-align: center;
-  }
+  .hero { min-height: 100vh; background: var(--sky); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 120px 48px 80px; text-align: center; }
   .hero-bg { position: absolute; inset: 0; pointer-events: none; opacity: .1; }
   .hero-content { position: relative; z-index: 2; animation: fadeUp .9s ease both; }
-  .hero-logo { margin-bottom: 28px; animation: fadeUp .9s .1s ease both; }
+  .hero-logo { margin-bottom: 28px; }
   .hero-logo svg { width: 100px; height: 100px; filter: drop-shadow(0 6px 20px rgba(0,0,0,.15)); }
-  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(72px,12vw,120px); color: var(--cream); letter-spacing: 6px; line-height: 1; animation: fadeUp .9s .2s ease both; }
-  .hero-tagline { font-size: 15px; font-weight: 300; letter-spacing: 4px; color: rgba(240,236,224,.8); text-transform: uppercase; margin: 10px 0 28px; animation: fadeUp .9s .3s ease both; }
-  .hero-desc { font-size: 18px; line-height: 1.75; color: rgba(255,255,255,.92); max-width: 560px; margin: 0 auto 40px; font-weight: 300; animation: fadeUp .9s .4s ease both; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(72px,12vw,120px); color: var(--cream); letter-spacing: 6px; line-height: 1; }
+  .hero-tagline { font-size: 15px; font-weight: 300; letter-spacing: 4px; color: rgba(240,236,224,.8); text-transform: uppercase; margin: 10px 0 28px; }
+  .hero-desc { font-size: 18px; line-height: 1.75; color: rgba(255,255,255,.92); max-width: 560px; margin: 0 auto 40px; font-weight: 300; }
   .hero-desc strong { font-weight: 500; color: var(--cream); }
-  .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeUp .9s .5s ease both; }
-  .btn-primary { background: var(--cream); color: var(--sky-dark); padding: 14px 36px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all .2s; }
-  .btn-primary:hover { background: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
-  .btn-outline { background: transparent; color: var(--cream); border: 1.5px solid rgba(240,236,224,.55); padding: 14px 36px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all .2s; }
+  .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--cream); color: var(--sky-dark); padding: 14px 36px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all .2s; display: inline-block; }
+  .btn-primary:hover { background: white; transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--cream); border: 1.5px solid rgba(240,236,224,.55); padding: 14px 36px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all .2s; display: inline-block; }
   .btn-outline:hover { border-color: var(--cream); background: rgba(240,236,224,.1); transform: translateY(-2px); }
   .hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: rgba(255,255,255,.55); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; animation: bounce 2s ease-in-out infinite; }
   .section { padding: 96px 48px; }
@@ -64,12 +52,46 @@
   .mission-card:hover { transform: translateX(6px); }
   .mission-card-title { font-weight: 500; color: var(--sky-dark); font-size: 14px; margin-bottom: 4px; }
   .mission-card-text { font-size: 13px; color: var(--gray); line-height: 1.6; }
-  .impact { background: var(--sky-pale); text-align: center; }
-  .impact-inner { max-width: 860px; margin: 0 auto; }
+  .impact { background: var(--sky-dark); text-align: center; }
+  .impact-inner { max-width: 1000px; margin: 0 auto; }
+  .impact .section-label { color: rgba(255,255,255,.6); }
+  .impact .section-title { color: var(--cream); }
   .impact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; margin-top: 52px; }
-  .impact-num { font-family: 'Playfair Display', serif; font-size: 58px; color: var(--sky-dark); line-height: 1; }
+  .impact-num { font-family: 'Playfair Display', serif; font-size: 58px; color: var(--cream); line-height: 1; }
   .impact-num span { font-size: 34px; }
-  .impact-label { font-size: 13px; color: var(--gray); margin-top: 8px; font-weight: 300; }
+  .impact-label { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 8px; font-weight: 300; }
+  .donation-breakdown { margin-top: 64px; }
+  .donation-breakdown h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); margin-bottom: 28px; }
+  .breakdown-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+  .breakdown-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 22px 16px; }
+  .breakdown-amount { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--sky-light); margin-bottom: 8px; }
+  .breakdown-equals { font-size: 11px; color: rgba(255,255,255,.4); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .breakdown-desc { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.5; }
+  /* event signup modal */
+  .event-signup-btn { margin-top: 16px; background: var(--sky); color: white; border: none; border-radius: 50px; padding: 10px 24px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all .2s; width: 100%; }
+  .event-signup-btn:hover { background: var(--sky-dark); transform: translateY(-1px); }
+  .event-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 200; align-items: center; justify-content: center; padding: 24px; }
+  .event-modal-overlay.open { display: flex; }
+  .event-modal { background: white; border-radius: 20px; max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 40px; position: relative; }
+  .event-modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--gray); }
+  .event-modal-tag { display: inline-block; background: var(--sky); color: white; font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; margin-bottom: 12px; }
+  .event-modal-title { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gray-dark); margin-bottom: 4px; }
+  .event-modal-date { font-size: 13px; color: var(--sky-dark); font-weight: 500; margin-bottom: 20px; }
+  .price-display { background: var(--sky-pale); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+  .price-label { font-size: 13px; color: var(--gray); }
+  .price-amount { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--sky-dark); }
+  .price-note { font-size: 11px; color: var(--sky-dark); margin-top: 2px; }
+  .event-form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .event-form-group label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); }
+  .event-form-group input, .event-form-group select { border: 1.5px solid rgba(122,184,212,.4); border-radius: 10px; padding: 11px 14px; font-size: 14px; color: var(--gray-dark); font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s; background: white; }
+  .event-form-group input:focus, .event-form-group select:focus { border-color: var(--sky); }
+  .event-form-submit { width: 100%; background: var(--sky); color: white; border: none; border-radius: 50px; padding: 14px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all .2s; margin-top: 8px; }
+  .event-form-submit:hover { background: var(--sky-dark); transform: translateY(-1px); }
+  .event-success { display: none; text-align: center; padding: 20px 0; }
+  .event-success-icon { font-size: 48px; margin-bottom: 12px; }
+  .event-success h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--gray-dark); margin-bottom: 8px; }
+  .event-success p { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 16px; }
+  .event-success a { color: var(--sky-dark); font-weight: 500; }
   .volunteer-inner { max-width: 1100px; margin: 0 auto; }
   .volunteer-header { margin-bottom: 52px; }
   .volunteer-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
@@ -91,6 +113,51 @@
   .event-body { padding: 22px 26px; }
   .event-title { font-weight: 500; font-size: 16px; color: var(--gray-dark); margin-bottom: 8px; }
   .event-desc { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 300; }
+  .blog { background: white; }
+  .blog-inner { max-width: 1100px; margin: 0 auto; }
+  .blog-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 20px; }
+  .blog-filters { display: flex; gap: 10px; flex-wrap: wrap; }
+  .filter-btn { padding: 8px 18px; border-radius: 50px; border: 1.5px solid rgba(122,184,212,.35); background: none; color: var(--gray); font-size: 13px; cursor: pointer; transition: all .2s; font-family: 'DM Sans', sans-serif; }
+  .filter-btn:hover, .filter-btn.active { background: var(--sky); color: white; border-color: var(--sky); }
+  .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+  .blog-card { border-radius: 16px; overflow: hidden; border: 1px solid rgba(122,184,212,.2); transition: all .25s; background: white; }
+  .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(122,184,212,.18); border-color: var(--sky-light); }
+  .blog-card-top { background: var(--sky-pale); padding: 28px 24px 20px; }
+  .blog-category { display: inline-block; background: var(--sky); color: white; font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; margin-bottom: 14px; }
+  .blog-category.investigacion { background: var(--sky-dark); }
+  .blog-category.testimonio { background: #c0828a; }
+  .blog-category.educacion { background: #7aad8a; }
+  .blog-title { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--gray-dark); line-height: 1.35; margin-bottom: 10px; }
+  .blog-excerpt { font-size: 13px; color: var(--gray); line-height: 1.7; font-weight: 300; }
+  .blog-card-bottom { padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(122,184,212,.15); }
+  .blog-author { display: flex; align-items: center; gap: 8px; }
+  .blog-author-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--sky); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: white; }
+  .blog-author-name { font-size: 12px; color: var(--gray); font-weight: 500; }
+  .blog-date { font-size: 11px; color: var(--gray); opacity: .7; }
+  .blog-read { font-size: 12px; color: var(--sky-dark); font-weight: 500; text-decoration: none; }
+  .blog-read:hover { color: var(--sky); }
+  .blog-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 200; align-items: center; justify-content: center; padding: 24px; }
+  .blog-modal-overlay.open { display: flex; }
+  .blog-modal { background: white; border-radius: 20px; max-width: 720px; width: 100%; max-height: 88vh; overflow-y: auto; padding: 48px; position: relative; }
+  .blog-modal-close { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--gray); }
+  .blog-modal-category { display: inline-block; background: var(--sky); color: white; font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; margin-bottom: 16px; }
+  .blog-modal-category.investigacion { background: var(--sky-dark); }
+  .blog-modal-category.testimonio { background: #c0828a; }
+  .blog-modal-category.educacion { background: #7aad8a; }
+  .blog-modal-title { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--gray-dark); line-height: 1.25; margin-bottom: 16px; }
+  .blog-modal-meta { font-size: 13px; color: var(--gray); margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid rgba(122,184,212,.2); }
+  .blog-modal-body { font-size: 16px; line-height: 1.85; color: var(--gray-dark); font-weight: 300; }
+  .blog-modal-body p { margin-bottom: 18px; }
+  .writing-cta { background: var(--sky-pale); border-top: 1px solid rgba(122,184,212,.2); padding: 36px 48px; text-align: center; }
+  .writing-cta p { font-size: 15px; color: var(--gray); max-width: 560px; margin: 0 auto 16px; line-height: 1.7; }
+  .writing-cta strong { color: var(--sky-dark); }
+  .writing-cta a { background: var(--sky); color: white; padding: 11px 28px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; display: inline-block; transition: all .2s; }
+  .writing-cta a:hover { background: var(--sky-dark); transform: translateY(-1px); }
+  .whatsapp-banner { background: #25d366; padding: 32px 48px; text-align: center; }
+  .whatsapp-banner p { color: white; font-size: 16px; margin: 0 auto 16px; font-weight: 300; max-width: 500px; line-height: 1.6; }
+  .whatsapp-banner strong { font-weight: 500; }
+  .wa-btn { background: white; color: #25d366; padding: 12px 28px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all .2s; }
+  .wa-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
   .signup { background: var(--sky); }
   .signup-inner { max-width: 680px; margin: 0 auto; text-align: center; }
   .signup .section-label { color: rgba(255,255,255,.7); }
@@ -111,9 +178,9 @@
   .donate-amounts { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 36px 0 28px; }
   .donate-amt { border: 1.5px solid rgba(122,184,212,.4); border-radius: 50px; padding: 12px 28px; font-size: 18px; font-weight: 500; color: var(--sky-dark); cursor: pointer; transition: all .2s; font-family: 'Playfair Display', serif; background: none; }
   .donate-amt:hover, .donate-amt.active { background: var(--sky); color: white; border-color: var(--sky); }
-  .donate-note { font-size: 13px; color: var(--gray); margin-bottom: 28px; font-weight: 300; line-height: 1.7; }
+  .donate-note { font-size: 13px; color: var(--gray); margin-bottom: 28px; font-weight: 300; }
   .donate-btn { background: var(--sky); color: white; padding: 15px 52px; border-radius: 50px; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-block; transition: all .2s; }
-  .donate-btn:hover { background: var(--sky-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(122,184,212,.4); }
+  .donate-btn:hover { background: var(--sky-dark); transform: translateY(-2px); }
   footer { background: #2e2e2e; color: rgba(255,255,255,.55); padding: 56px 48px 28px; }
   .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 44px; }
   .footer-brand { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--sky-light); letter-spacing: 3px; }
@@ -127,17 +194,21 @@
   .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.08); padding-top: 22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; }
   .ig-link { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,.45); text-decoration: none; font-size: 13px; transition: color .2s; }
   .ig-link:hover { color: var(--sky-light); }
+  .back-to-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--sky-dark); color: white; border: none; border-radius: 50%; cursor: pointer; display: none; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 4px 16px rgba(0,0,0,.2); transition: all .2s; z-index: 99; }
+  .back-to-top:hover { background: var(--sky); transform: translateY(-2px); }
+  .back-to-top.visible { display: flex; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
+  @media (max-width: 900px) { .breakdown-grid { grid-template-columns: repeat(2,1fr); } }
   @media (max-width: 768px) {
-    nav { padding: 14px 20px; }
-    .nav-links { display: none; }
-    .section { padding: 60px 20px; }
-    .mission-inner, .impact-grid, .volunteer-grid, .events-grid { grid-template-columns: 1fr; gap: 20px; }
-    .form-grid { grid-template-columns: 1fr; }
-    .hero { padding: 100px 20px 60px; }
-    footer { padding: 44px 20px 24px; }
-    .footer-inner { flex-direction: column; }
+    nav { padding: 14px 20px; } .nav-links { display: none; } .section { padding: 60px 20px; }
+    .mission-inner, .impact-grid, .volunteer-grid, .events-grid, .blog-grid { grid-template-columns: 1fr; gap: 20px; }
+    .breakdown-grid { grid-template-columns: 1fr 1fr; }
+    .form-grid { grid-template-columns: 1fr; } .hero { padding: 100px 20px 60px; }
+    footer { padding: 44px 20px 24px; } .footer-inner { flex-direction: column; }
+    .blog-modal { padding: 28px 20px; } .writing-cta, .whatsapp-banner { padding: 28px 20px; }
+    .blog-header { flex-direction: column; align-items: flex-start; }
+    .event-modal { padding: 28px 20px; }
   }
 </style>
 </head>
@@ -159,6 +230,7 @@
     <li><a href="#mision">Misión</a></li>
     <li><a href="#voluntariado">Voluntariado</a></li>
     <li><a href="#eventos">Eventos</a></li>
+    <li><a href="#blog">Blog</a></li>
     <li><a href="#donar">Donar</a></li>
   </ul>
   <a href="#unete" class="nav-cta">Únete</a>
@@ -208,22 +280,10 @@
       <p class="section-body">Somos un grupo de jóvenes comprometidos con hacer la diferencia. Desde hace dos años apoyamos a <strong>Manos Que Sanan</strong> — visitando a los niños, organizando eventos, y cubriendo necesidades reales: desde alimentos y medicamentos hasta material escolar y momentos de alegría.</p>
     </div>
     <div class="mission-cards">
-      <div class="mission-card">
-        <div class="mission-card-title">Apoyo material</div>
-        <div class="mission-card-text">Alimentos, medicamentos, suministros del hogar y todo lo que cada familia necesita durante el tratamiento.</div>
-      </div>
-      <div class="mission-card">
-        <div class="mission-card-title">Presencia constante</div>
-        <div class="mission-card-text">Visitamos a los niños regularmente en Manos Que Sanan, construyendo lazos genuinos y de largo plazo.</div>
-      </div>
-      <div class="mission-card">
-        <div class="mission-card-title">Eventos y recaudación</div>
-        <div class="mission-card-text">Rifas, eventos comunitarios y ventas que generan los recursos para sostener nuestra labor.</div>
-      </div>
-      <div class="mission-card">
-        <div class="mission-card-title">Comunidad activa</div>
-        <div class="mission-card-text">Conectamos a voluntarios, donantes y aliados alrededor de una causa que nos une a todos.</div>
-      </div>
+      <div class="mission-card"><div class="mission-card-title">Apoyo material</div><div class="mission-card-text">Alimentos, medicamentos, suministros del hogar y todo lo que cada familia necesita durante el tratamiento.</div></div>
+      <div class="mission-card"><div class="mission-card-title">Presencia constante</div><div class="mission-card-text">Visitamos a los niños regularmente en Manos Que Sanan, construyendo lazos genuinos y de largo plazo.</div></div>
+      <div class="mission-card"><div class="mission-card-title">Eventos y recaudación</div><div class="mission-card-text">Rifas, eventos comunitarios y ventas que generan los recursos para sostener nuestra labor.</div></div>
+      <div class="mission-card"><div class="mission-card-title">Comunidad activa</div><div class="mission-card-text">Conectamos a voluntarios, donantes y aliados alrededor de una causa que nos une a todos.</div></div>
     </div>
   </div>
 </section>
@@ -233,17 +293,17 @@
     <div class="section-label">Nuestro impacto</div>
     <h2 class="section-title">Dos años de cambio real</h2>
     <div class="impact-grid">
-      <div class="impact-item">
-        <div class="impact-num">2<span>+</span></div>
-        <div class="impact-label">Años apoyando a Manos Que Sanan</div>
-      </div>
-      <div class="impact-item">
-        <div class="impact-num">100<span>+</span></div>
-        <div class="impact-label">Participantes en nuestros eventos</div>
-      </div>
-      <div class="impact-item">
-        <div class="impact-num">40,000<span>+</span></div>
-        <div class="impact-label">Pesos donados a Manos Que Sanan</div>
+      <div><div class="impact-num">2<span>+</span></div><div class="impact-label">Años apoyando a Manos Que Sanan</div></div>
+      <div><div class="impact-num">100<span>+</span></div><div class="impact-label">Participantes en nuestros eventos</div></div>
+      <div><div class="impact-num">40,000<span>+</span></div><div class="impact-label">Pesos donados a Manos Que Sanan</div></div>
+    </div>
+    <div class="donation-breakdown">
+      <h3>¿Qué hace tu donación?</h3>
+      <div class="breakdown-grid">
+        <div class="breakdown-card"><div class="breakdown-amount">$100</div><div class="breakdown-equals">equivale a</div><div class="breakdown-desc">Una semana de medicamento para un niño en tratamiento</div></div>
+        <div class="breakdown-card"><div class="breakdown-amount">$250</div><div class="breakdown-equals">equivale a</div><div class="breakdown-desc">Una despensa completa para una familia durante su hospitalización</div></div>
+        <div class="breakdown-card"><div class="breakdown-amount">$500</div><div class="breakdown-equals">equivale a</div><div class="breakdown-desc">Material escolar y actividades recreativas para dos niños</div></div>
+        <div class="breakdown-card"><div class="breakdown-amount">$1,000</div><div class="breakdown-equals">equivale a</div><div class="breakdown-desc">Insumos del hogar y apoyo básico para una familia por un mes</div></div>
       </div>
     </div>
   </div>
@@ -257,31 +317,12 @@
       <p class="section-body">No solo necesitamos donaciones — necesitamos tus habilidades, tu tiempo y tu corazón. Hay un lugar para ti sin importar lo que puedas ofrecer.</p>
     </div>
     <div class="volunteer-grid">
-      <div class="vol-card">
-        <div class="vol-icon">🎨</div>
-        <div class="vol-title">Diseño y comunicación</div>
-        <div class="vol-text">Diseña materiales, crea contenido para redes sociales o ayúdanos a contar nuestra historia visualmente.</div>
-      </div>
-      <div class="vol-card">
-        <div class="vol-icon">✍️</div>
-        <div class="vol-title">Redacción y blog</div>
-        <div class="vol-text">Escribe artículos, testimonios o contenido que inspire a más personas a sumarse a la causa.</div>
-      </div>
-      <div class="vol-card">
-        <div class="vol-icon">📸</div>
-        <div class="vol-title">Fotografía y video</div>
-        <div class="vol-text">Captura los momentos de alegría en nuestros eventos y visitas para compartir el impacto real con la comunidad.</div>
-      </div>
-      <div class="vol-card">
-        <div class="vol-icon">🎉</div>
-        <div class="vol-title">Voluntari@ de eventos</div>
-        <div class="vol-text">Apoya en la logística, ambientación y experiencia de nuestros eventos de recaudación.</div>
-      </div>
-      <div class="vol-card">
-        <div class="vol-icon">🤝</div>
-        <div class="vol-title">Visitas y actividades</div>
-        <div class="vol-text">Acompáñanos en las visitas a Manos Que Sanan y lleva alegría directamente a los niños y sus familias.</div>
-      </div>
+      <div class="vol-card"><div class="vol-icon">🎨</div><div class="vol-title">Diseño y comunicación</div><div class="vol-text">Diseña materiales, crea contenido para redes sociales o ayúdanos a contar nuestra historia visualmente.</div></div>
+      <div class="vol-card"><div class="vol-icon">✍️</div><div class="vol-title">Redacción y blog</div><div class="vol-text">Escribe artículos, blogs, investigaciones o testimonios que inspiren a más personas a sumarse a la causa.</div></div>
+      <div class="vol-card"><div class="vol-icon">📸</div><div class="vol-title">Fotografía y video</div><div class="vol-text">Captura los momentos de alegría en nuestros eventos y visitas para compartir el impacto real con la comunidad.</div></div>
+      <div class="vol-card"><div class="vol-icon">🎉</div><div class="vol-title">Voluntari@ de eventos</div><div class="vol-text">Apoya en la logística, ambientación y experiencia de nuestros eventos de recaudación.</div></div>
+      <div class="vol-card"><div class="vol-icon">🤝</div><div class="vol-title">Visitas y actividades</div><div class="vol-text">Acompáñanos en las visitas a Manos Que Sanan y lleva alegría directamente a los niños y sus familias.</div></div>
+      <div class="vol-card"><div class="vol-icon">📚</div><div class="vol-title">Tutoría académica</div><div class="vol-text">Apoya a niños que pierden clases durante su tratamiento con sesiones de tutoría presencial o en línea.</div></div>
     </div>
   </div>
 </section>
@@ -291,39 +332,141 @@
     <div class="section-label">Próximos eventos</div>
     <h2 class="section-title">Únete a nuestra próxima actividad</h2>
     <div class="events-grid">
+
+      <!-- CERAMICS EVENT WITH SIGNUP -->
       <div class="event-card">
         <div class="event-header">
-          <div class="event-date"><div class="event-date-day">...</div><div class="event-date-month">Abril</div></div>
-          <div class="event-tag">evento</div>
+          <div class="event-date"><div class="event-date-day">24</div><div class="event-date-month">Abril</div></div>
+          <div class="event-tag">Taller</div>
         </div>
         <div class="event-body">
-          <div class="event-title">Clase de cerámica</div>
-          <div class="event-desc">Boletos disponibles en nuestro Instagram. Todos los fondos van directamente a Manos Que Sanan.</div>
+          <div class="event-title">Clase de Cerámica: Sculpt &amp; Sip</div>
+          <div class="event-desc">Viernes 24 de abril. Una noche de cerámica, creatividad y buena vibra — todo con fines benéficos para Manos Que Sanan.</div>
+          <div style="margin-top:10px; font-size:12px; color:var(--sky-dark); font-weight:500;">🎟 $750 individual · $700 c/u con +1</div>
+          <button class="event-signup-btn" onclick="openEventModal()">Apartar mi lugar →</button>
         </div>
       </div>
-      <div class="event-card">
-        <div class="event-header">
-          <div class="event-date"><div class="event-date-day">...</div><div class="event-date-month">Mayo</div></div>
-          <div class="event-tag">Evento</div>
-        </div>
-        <div class="event-body">
-          <div class="event-title">Campito STEM by ECO</div>
-          <div class="event-desc">Un campito para niños y niñas los sábados de mayo donde podrán divertirse y aprender.</div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-header">
-          <div class="event-date"><div class="event-date-day">...</div><div class="event-date-month">Mayo</div></div>
-          <div class="event-tag">Evento</div>
-        </div>
-        <div class="event-body">
-          <div class="event-title">Mother & Daughter taller de flores</div>
-          <div class="event-desc">Aprende a hacer un arreglo floral mientras convives con tu hija o mamá. El regalo perfecto para el Día de las Madres.</div>
-        </div>
-      </div>
+
+      <div class="event-card"><div class="event-header"><div class="event-date"><div class="event-date-day">...</div><div class="event-date-month">Mayo</div></div><div class="event-tag">Campamento</div></div><div class="event-body"><div class="event-title">Campito STEM by ECO</div><div class="event-desc">Un campito para niños y niñas los sábados de mayo donde podrán divertirse y aprender.</div></div></div>
+      <div class="event-card"><div class="event-header"><div class="event-date"><div class="event-date-day">...</div><div class="event-date-month">Mayo</div></div><div class="event-tag">Taller</div></div><div class="event-body"><div class="event-title">Mother &amp; Daughter taller de flores</div><div class="event-desc">Aprende a hacer un arreglo floral mientras convives con tu hija o mamá. El regalo perfecto para el Día de las Madres.</div></div></div>
     </div>
   </div>
 </section>
+
+<!-- CERAMICS SIGNUP MODAL -->
+<div class="event-modal-overlay" id="event-modal" onclick="closeEventIfOverlay(event)">
+  <div class="event-modal">
+    <button class="event-modal-close" onclick="closeEventModal()">✕</button>
+    <span class="event-modal-tag">Taller · 24 de Abril</span>
+    <h2 class="event-modal-title">Clase de Cerámica: Sculpt &amp; Sip</h2>
+    <div class="event-modal-date">Viernes 24 de abril · 7:00-9:00 pm · Monterrey</div>
+
+    <div class="price-display" id="price-display">
+      <div>
+        <div class="price-label">Total a pagar</div>
+        <div class="price-note" id="price-note">1 boleto individual</div>
+      </div>
+      <div class="price-amount" id="price-amount">$750</div>
+    </div>
+
+    <form id="ceramics-form" action="https://formspree.io/f/mnjozywe" method="POST" onsubmit="handleCeramicsSubmit(event)">
+      <input type="hidden" name="evento" value="Sculpt &amp; Sip — 24 de Abril"/>
+      <input type="hidden" name="precio_total" id="hidden-price" value="$750 MXN (1 boleto)"/>
+
+      <div class="event-form-group">
+        <label>Tu nombre completo</label>
+        <input type="text" name="nombre" placeholder="Nombre Apellido" required/>
+      </div>
+      <div class="event-form-group">
+        <label>WhatsApp</label>
+        <input type="tel" name="whatsapp" placeholder="+52 81 0000 0000" required/>
+      </div>
+      <div class="event-form-group">
+        <label>¿Vienes con +1?</label>
+        <select name="plus_one" id="plus-one-select" onchange="updatePrice(this.value)" required>
+          <option value="no">No, voy sola/solo — $750 MXN</option>
+          <option value="si">Sí, traigo +1 — $700 c/u ($1,400 total)</option>
+        </select>
+      </div>
+      <div class="event-form-group" id="plus-one-name-group" style="display:none;">
+        <label>Nombre de tu +1</label>
+        <input type="text" name="nombre_plus_one" placeholder="Nombre de quien te acompaña"/>
+      </div>
+
+      <button type="submit" class="event-form-submit">Confirmar mi lugar →</button>
+    </form>
+
+    <div class="event-success" id="ceramics-success">
+      <div class="event-success-icon">🎉</div>
+      <h3>¡Ya estás dentro!</h3>
+      <p>Gracias por apartar tu lugar en <strong>Sculpt &amp; Sip</strong>. Para confirmar tu reservación, realiza tu pago aquí:</p>
+      <a href="https://wa.link/0vdnaw" style="display:inline-block; background:var(--sky); color:white; padding:12px 28px; border-radius:50px; text-decoration:none; font-weight:500; font-size:14px; margin-bottom:12px;">Pagar ahora →</a>
+      <p style="font-size:12px; color:var(--gray);">Te contactaremos por WhatsApp para confirmar tu pago y enviarte los detalles del evento.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section blog" id="blog">
+  <div class="blog-inner">
+    <div class="blog-header">
+      <div>
+        <div class="section-label">Blog y escritura</div>
+        <h2 class="section-title">Voces que importan</h2>
+      </div>
+      <div class="blog-filters">
+        <button class="filter-btn active" onclick="filterBlog('todos',this)">Todos</button>
+        <button class="filter-btn" onclick="filterBlog('blog',this)">Blog</button>
+        <button class="filter-btn" onclick="filterBlog('investigacion',this)">Investigación</button>
+        <button class="filter-btn" onclick="filterBlog('testimonio',this)">Testimonio</button>
+        <button class="filter-btn" onclick="filterBlog('educacion',this)">Educación</button>
+      </div>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+
+      <!--
+      =====================================================
+      CÓMO AGREGAR UN POST NUEVO — copia este bloque
+      y pégalo antes del cierre de este div.
+      Cambia data-category, data-title, data-author,
+      data-date, data-body (separa párrafos con |)
+      y el contenido visible dentro de las clases.
+      Categorías disponibles: blog | investigacion | testimonio | educacion
+      =====================================================
+      -->
+
+      <div class="blog-card" data-category="blog" data-title="Dos años junto a Manos Que Sanan" data-category-label="Blog" data-author="Equipo ECO" data-date="Marzo 2026" data-body="Lo que comenzó como una conversación entre dos amigos hoy es un proyecto que ha tocado la vida de decenas de familias en Monterrey. Hace dos años, sin saber exactamente cómo hacerlo, decidimos que queríamos hacer algo más que observar.|Nuestra primera visita a Manos Que Sanan fue humilde — llegamos con algunas despensas y mucha incertidumbre. Lo que encontramos fue algo que no esperábamos: niños con una energía y alegría que te cambia la perspectiva de todo.|Hoy, dos años después, somos un equipo de cinco, hemos recaudado más de 40,000 pesos, y seguimos visitando, seguimos aprendiendo, y seguimos creyendo que el cambio occure — un paso a la vez.">
+        <div class="blog-card-top"><span class="blog-category">Blog</span><div class="blog-title">Dos años junto a Manos Que Sanan</div><div class="blog-excerpt">Lo que comenzó como una conversación entre dos amigos hoy es un proyecto que ha tocado la vida de decenas de familias en Monterrey.</div></div>
+        <div class="blog-card-bottom"><div class="blog-author"><div class="blog-author-avatar">E</div><div class="blog-author-name">Equipo ECO</div></div><span class="blog-date">Marzo 2026</span><a href="#" class="blog-read" onclick="openPost(this);return false;">Leer →</a></div>
+      </div>
+
+      <div class="blog-card" data-category="educacion" data-title="Los tipos de cáncer infantil más comunes en México" data-category-label="Educación" data-author="Equipo ECO" data-date="Febrero 2026" data-body="En México, el cáncer infantil es la primera causa de muerte por enfermedad en niños de 5 a 14 años. Sin embargo, es un tema del que pocas personas hablan con claridad. Creemos que entenderlo es el primer paso para poder ayudar.|Los tipos más comunes incluyen la leucemia, que representa aproximadamente el 30% de los casos y afecta las células de la sangre. También los tumores del sistema nervioso central, los linfomas, y el neuroblastoma, que afecta principalmente a niños menores de cinco años.|Una diferencia clave frente al cáncer en adultos: en niños el objetivo es la curación total. Con diagnóstico temprano y tratamiento adecuado, entre el 75% y 80% de los niños pueden superar la enfermedad.|En ECO acompañamos a niños que viven esto cada día. Conocerlo nos hace mejores aliados.">
+        <div class="blog-card-top"><span class="blog-category educacion">Educación</span><div class="blog-title">Los tipos de cáncer infantil más comunes en México</div><div class="blog-excerpt">En México el cáncer infantil es la primera causa de muerte por enfermedad en niños de 5 a 14 años. Te explicamos los tipos más comunes.</div></div>
+        <div class="blog-card-bottom"><div class="blog-author"><div class="blog-author-avatar">E</div><div class="blog-author-name">Equipo ECO</div></div><span class="blog-date">Febrero 2026</span><a href="#" class="blog-read" onclick="openPost(this);return false;">Leer →</a></div>
+      </div>
+
+      <div class="blog-card" data-category="blog" data-title="Cómo hablar con una familia que tiene un niño con cáncer" data-category-label="Blog" data-author="Equipo ECO" data-date="Enero 2026" data-body="La mayoría de las personas que quieren ayudar dicen algo equivocado — no por falta de cuidado, sino porque nadie les enseñó qué decir. Este post es para ti.|Evita frases como 'todo pasa por algo', 'hay que ser fuertes' o 'conozco a alguien que se curó con...'. Aunque vienen del amor, minimizan el dolor real de la familia.|En cambio, prueba con: 'Aquí estoy, sin importar qué.' o '¿En qué te puedo ayudar hoy, específicamente?' El silencio también vale — a veces lo más valioso es sentarse junto a alguien y no irse.|Con los niños, habla con normalidad. Pregúntales de su vida, no solo de su salud. Siguen siendo niños primero.|Y si no sabes qué decir, está bien decirlo: 'No sé qué decir, pero no quiero dejarte solo/a.' Esa honestidad vale más que cualquier frase ensayada.">
+        <div class="blog-card-top"><span class="blog-category">Blog</span><div class="blog-title">Cómo hablar con una familia que tiene un niño con cáncer</div><div class="blog-excerpt">La mayoría de las personas que quieren ayudar dicen algo equivocado — no por falta de cuidado, sino porque nadie les enseñó qué decir.</div></div>
+        <div class="blog-card-bottom"><div class="blog-author"><div class="blog-author-avatar">E</div><div class="blog-author-name">Equipo ECO</div></div><span class="blog-date">Enero 2026</span><a href="#" class="blog-read" onclick="openPost(this);return false;">Leer →</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="writing-cta">
+    <p>¿Tienes algo que escribir? <strong>Buscamos voluntarios que quieran contribuir con blogs, investigaciones, ensayos o testimonios</strong> para nuestra sección de escritura.</p>
+    <a href="#unete">Quiero escribir para ECO →</a>
+  </div>
+</section>
+
+<div class="whatsapp-banner">
+  <p><strong>Únete a nuestra comunidad de WhatsApp</strong> — recibe actualizaciones de eventos, convocatorias de voluntariado y noticias de ECO directamente en tu celular.</p>
+  <br/>
+  <a href="https://w.app/ztbusv" class="wa-btn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Unirse a la comunidad
+  </a>
+</div>
 
 <section class="section signup" id="unete">
   <div class="signup-inner">
@@ -332,18 +475,9 @@
     <p class="section-body">Cuéntanos quién eres y cómo puedes contribuir. Nos pondremos en contacto contigo muy pronto.</p>
     <form action="https://formspree.io/f/mnjozywe" method="POST">
       <div class="form-grid">
-        <div class="form-group">
-          <label>Nombre completo</label>
-          <input type="text" name="nombre" placeholder="Tu nombre" required/>
-        </div>
-        <div class="form-group">
-          <label>Correo electrónico</label>
-          <input type="email" name="email" placeholder="tu@correo.com" required/>
-        </div>
-        <div class="form-group">
-          <label>WhatsApp</label>
-          <input type="tel" name="whatsapp" placeholder="+52 81 0000 0000"/>
-        </div>
+        <div class="form-group"><label>Nombre completo</label><input type="text" name="nombre" placeholder="Tu nombre" required/></div>
+        <div class="form-group"><label>Correo electrónico</label><input type="email" name="email" placeholder="tu@correo.com" required/></div>
+        <div class="form-group"><label>WhatsApp</label><input type="tel" name="whatsapp" placeholder="+52 81 0000 0000"/></div>
         <div class="form-group">
           <label>¿Cómo quieres contribuir?</label>
           <select name="contribucion" required>
@@ -353,13 +487,11 @@
             <option>Fotografía y video</option>
             <option>Voluntari@ de eventos</option>
             <option>Visitas presenciales</option>
+            <option>Tutoría académica</option>
             <option>Otro</option>
           </select>
         </div>
-        <div class="form-group full">
-          <label>Cuéntanos sobre ti</label>
-          <textarea name="mensaje" rows="3" placeholder="¿Qué habilidades tienes? ¿Por qué quieres unirte a ECO?"></textarea>
-        </div>
+        <div class="form-group full"><label>Cuéntanos sobre ti</label><textarea name="mensaje" rows="3" placeholder="¿Qué habilidades tienes? ¿Por qué quieres unirte a ECO?"></textarea></div>
       </div>
       <button type="submit" class="form-submit">Enviar solicitud</button>
     </form>
@@ -378,7 +510,7 @@
       <button class="donate-amt" onclick="selectAmt(this)">$1,000</button>
     </div>
     <p class="donate-note">Todo suma.</p>
-    <a href="https://w.app/ztbusv" class="donate-btn">Donar ahora</a>
+    <a href="https://wa.link/npvoqa" class="donate-btn">Donar ahora</a>
   </div>
 </section>
 
@@ -395,6 +527,7 @@
         <li><a href="#mision">Misión</a></li>
         <li><a href="#voluntariado">Voluntariado</a></li>
         <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#unete">Únete</a></li>
         <li><a href="#donar">Donar</a></li>
       </ul>
@@ -416,11 +549,96 @@
   </div>
 </footer>
 
+<div class="blog-modal-overlay" id="blog-modal" onclick="closeIfOverlay(event)">
+  <div class="blog-modal">
+    <button class="blog-modal-close" onclick="closePost()">✕</button>
+    <span class="blog-modal-category" id="modal-category"></span>
+    <h2 class="blog-modal-title" id="modal-title"></h2>
+    <div class="blog-modal-meta" id="modal-meta"></div>
+    <div class="blog-modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
   function selectAmt(btn) {
     document.querySelectorAll('.donate-amt').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
+  function filterBlog(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.blog-card').forEach(card => {
+      card.style.display = (cat === 'todos' || card.dataset.category === cat) ? 'block' : 'none';
+    });
+  }
+  function openPost(link) {
+    const card = link.closest('.blog-card');
+    document.getElementById('modal-category').textContent = card.dataset.categoryLabel;
+    document.getElementById('modal-category').className = 'blog-modal-category ' + card.dataset.category;
+    document.getElementById('modal-title').textContent = card.dataset.title;
+    document.getElementById('modal-meta').textContent = 'Por ' + card.dataset.author + ' · ' + card.dataset.date;
+    const paragraphs = card.dataset.body.split('|').map(p => '<p>' + p + '</p>').join('');
+    document.getElementById('modal-body').innerHTML = paragraphs;
+    document.getElementById('blog-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePost() {
+    document.getElementById('blog-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeIfOverlay(e) {
+    if (e.target === document.getElementById('blog-modal')) closePost();
+  }
+  // EVENT MODAL
+  function openEventModal() {
+    document.getElementById('event-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeEventModal() {
+    document.getElementById('event-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeEventIfOverlay(e) {
+    if (e.target === document.getElementById('event-modal')) closeEventModal();
+  }
+  function updatePrice(val) {
+    const nameGroup = document.getElementById('plus-one-name-group');
+    const priceAmount = document.getElementById('price-amount');
+    const priceNote = document.getElementById('price-note');
+    const hiddenPrice = document.getElementById('hidden-price');
+    if (val === 'si') {
+      nameGroup.style.display = 'flex';
+      priceAmount.textContent = '$1,400';
+      priceNote.textContent = '2 boletos · $700 c/u';
+      hiddenPrice.value = '$1,400 MXN (2 boletos a $700 c/u)';
+    } else {
+      nameGroup.style.display = 'none';
+      priceAmount.textContent = '$750';
+      priceNote.textContent = '1 boleto individual';
+      hiddenPrice.value = '$750 MXN (1 boleto)';
+    }
+  }
+  function handleCeramicsSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('ceramics-form');
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(() => {
+      form.style.display = 'none';
+      document.getElementById('ceramics-success').style.display = 'block';
+    }).catch(() => {
+      form.style.display = 'none';
+      document.getElementById('ceramics-success').style.display = 'block';
+    });
+  }
+  window.addEventListener('scroll', () => {
+    document.getElementById('back-to-top').classList.toggle('visible', window.scrollY > 400);
+  });
 </script>
 </body>
 </html>
